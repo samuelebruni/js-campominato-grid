@@ -10,7 +10,11 @@ document.querySelector('button').addEventListener("click", function() {
         
        const elementCell = `<div class="cell">${i + 1}</div>`;
        console.log(elementCell);
-       document.getElementById('container').innerHTML += elementCell
+       document.getElementById('container').innerHTML += elementCell;
+       elementCell.addEventListener('click', function(){
+        console.log('ciao');
+        });
     }
-
+    
+   
 });
