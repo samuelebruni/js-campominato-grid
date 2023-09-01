@@ -6,14 +6,24 @@ Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed 
 
 document.querySelector('button').addEventListener("click", function() {
 
+    let container = document.getElementById('container');
+
     for (let i = 0; i < 100; i++) {
         
-       const elementCell = `<div class="cell">${i + 1}</div>`;
+       /*const elementCell = `<div class="cell">${i + 1}</div>`;
        console.log(elementCell);
-       document.getElementById('container').innerHTML += elementCell;
-       elementCell.addEventListener('click', function(){
-        console.log('ciao');
-        });
+       document.getElementById('container').innerHTML += elementCell;*/
+
+
+        const elementCell = document.createElement('div');
+        elementCell.className = 'cell';
+        elementCell.innerText = i + 1;
+        container.append(elementCell);
+
+        elementCell.addEventListener('click', function(){
+        console.log('ho cliccato sulla cella numero', elementCell);
+        elementCell.classList.toggle('bg-danger');
+    })
     }
     
    
